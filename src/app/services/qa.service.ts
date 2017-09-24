@@ -13,7 +13,6 @@ export class QAService {
     for (let iter = 0; iter < hirangaPairs.length; iter++) {
       temp.push({ind: iter, score: Math.random()});
     }
-    console.log(temp.map((item) => item.score));
 
     temp.sort((a, b) =>  {
       if (a.score > b.score) {

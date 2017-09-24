@@ -14,8 +14,15 @@ export class AppComponent implements OnInit {
 
   }
 
-  ngOnInit() {
+  onClick() {
+    this.initPairs();
+  }
 
+  ngOnInit() {
+    this.initPairs();
+  }
+
+  initPairs() {
     const n = 5;
     this.currentRound = this.qaService.getNRandomHirangaPairs(n);
   }

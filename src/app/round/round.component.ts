@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChildren, QueryList } from '@angular/core';
 import { shuffle } from '../util/shuffle';
 import { QAPair } from '../util/qapair';
 
+import {AnswerComponent} from '../answer/answer.component';
 
 @Component({
   selector: 'app-round',
@@ -9,6 +10,8 @@ import { QAPair } from '../util/qapair';
   styleUrls: ['./round.component.css']
 })
 export class RoundComponent implements OnInit {
+
+  @ViewChildren(AnswerComponent) answerComponents: QueryList<AnswerComponent>;
 
   _inputList: QAPair[];
   get inputList(): QAPair[] {
@@ -29,6 +32,11 @@ export class RoundComponent implements OnInit {
   }
 
   initQA() {
+    if (this.answerComponents) {
+      // manually mark to false any components that might be reused between previous and next lists
+      this.answerComponents.forEach((item) => item.markFalse());
+    }
+
     this.answerList = this.inputList;
     this.questionList = shuffle(
       this.answerList

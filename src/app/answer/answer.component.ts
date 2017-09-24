@@ -41,4 +41,8 @@ export class AnswerComponent implements OnInit {
     }
   }
 
+  markFalse() {
+    this.answered = false;
+  }
+
 }
