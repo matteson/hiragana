@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { DraggableDirective } from './draggable/draggable.directive';
 
 import { DragService } from './services/drag.service';
+import { QAService } from './services/qa.service';
+
 import { DropTargetDirective } from './drop-target/drop-target.directive';
 import { AnswerComponent } from './answer/answer.component';
 import { QuestionComponent } from './question/question.component';
@@ -24,7 +26,8 @@ import { QuestionComponent } from './question/question.component';
     FlexLayoutModule
   ],
   providers: [
-    DragService
+    DragService,
+    QAService
   ],
   bootstrap: [AppComponent]
 })
