@@ -11,6 +11,7 @@ import { QAService } from './services/qa.service';
 import { DropTargetDirective } from './drop-target/drop-target.directive';
 import { AnswerComponent } from './answer/answer.component';
 import { QuestionComponent } from './question/question.component';
+import { RoundComponent } from './round/round.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { QuestionComponent } from './question/question.component';
     DraggableDirective,
     DropTargetDirective,
     AnswerComponent,
-    QuestionComponent
+    QuestionComponent,
+    RoundComponent
   ],
   imports: [
     BrowserModule,
